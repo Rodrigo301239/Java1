@@ -1,22 +1,39 @@
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner (System.in);
-        String imc;
-        int peso;
-        float calculo;
+        float imc;
+        float peso;
         float altura;
 
-        System.out.println("Bem vindo a calculadora de imc");
-        System.out.println("qual seu peso?");
-        peso = scanner.nextInt();
-        System.out.println("qual sua altura?");
+        System.out.println("Bem vindo a calculadora de IMC");
+        System.out.println("Qual seria sua altura (m)");
         altura = scanner.nextFloat();
+        System.out.println("qual seria seu peso?");
+        peso = scanner.nextFloat();
 
-        System.out.println("seu imc é "+peso / (altura * altura));
+        imc = peso / (altura * altura);
+
+        System.out.println("Seu imc é de "+imc);
+
+      if (imc < 18.5){
+          System.out.println("voce esta abaixo do peso");
+        }
+      else if (imc > 18.5 && imc < 24.9){
+          System.out.println("voce esta com o peso normal, parabens");
+        }
+
+      else if(imc > 24.9 && imc < 29.9){
+          System.out.println("voce esta com excesso de peso");
 
         }
+      else if (imc > 30 && imc < 34.9){
+          System.out.println("Voce esta com obesidade");
+
+        }
+      else if (imc > 35){
+          System.out.println("voce esta com obesidade morbida, thais carlo");
+        }
     }
+}
